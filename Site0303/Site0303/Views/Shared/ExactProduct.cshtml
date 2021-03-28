@@ -1,0 +1,31 @@
+﻿@model Product
+    <head>
+        <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+        <script>
+            $(document).ready(function () {
+                $('#buttonBuy').click(function () {
+                    $.ajax({
+                        type: 'POST',
+                        url: "@Url.Action("AddToCart")",
+                        data: {id: @Model.Id },
+                        success: function (msg) {
+                            console.log();
+                        }
+                   })
+                })
+            })
+        </script>
+    </head>
+
+<div class="col-lg-4">
+    <img class="img-thumbnail" src="@Model.img" alt="@Model.Name" />
+    <h2> @Model.Name</h2>
+    <p>@Model.Description</p>
+    <p>Цена: @Model.Price.ToString("c")</p>
+    <p>Доступно: @Model.IsAviable</p>
+    <div>
+        <input type="button" value="Добавить в корзину" id="buttonBuy" />
+        <br />
+        <span id="result1"></span>
+    </div>
+</div>

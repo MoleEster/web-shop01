@@ -1,0 +1,36 @@
+﻿@model HomeViewModel
+
+
+<div class="container1">
+    <div class="card">
+        <div class="imgBx">
+            <img src="~/knifesImg/homeknife.png" />
+        </div>
+        <div class="contentBx">
+            <h2>Steel arms</h2>
+            <a href="/Products/List/steel-arms">Go to</a>
+        </div>
+    </div>
+    <div class="card fire">
+        <div class="imgBx">
+            <img src="~/gunsImg/homefire.png" />
+        </div>
+        <div class="contentBx">
+            <h2>Firearms</h2>
+            <a href="/Products/List/firearms">Go to</a>
+        </div>
+    </div>
+</div>
+
+<h1> Лучшие продукты</h1>
+<div>
+    @{
+
+        foreach (Product product in Model.FavProducts)
+        {
+            @Html.Partial("AllProducts", product)
+            <hr/>
+        }
+    }
+
+</div>

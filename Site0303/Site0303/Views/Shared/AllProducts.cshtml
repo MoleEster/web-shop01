@@ -1,0 +1,10 @@
+﻿@model Product
+
+<div class="col-lg-4">
+    <img class="img-thumbnail" src="@Model.img" alt="@Model.Name" />
+    <h2> @Model.Name</h2>
+    <p>Цена: @Model.Price.ToString("c")</p>
+    <p>Доступно: @Model.IsAviable</p>
+    <p><a class="btn btn-warning" href="/Products/ExactItem/@Model.Id">Подробнее</a></p>
+
+</div>

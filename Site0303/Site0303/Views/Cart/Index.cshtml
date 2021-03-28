@@ -1,0 +1,15 @@
+﻿@model CartViewModel
+
+<h1>Ваша корзина</h1> 
+<div>
+    @{
+
+        foreach (Product product in Model.ProductsInCart)
+        {
+            @Html.Partial("ProductInCart", product)
+            <hr />
+        }
+    }
+
+    <h2>Total: @Model.Price</h2>
+</div>
